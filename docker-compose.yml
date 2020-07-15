@@ -1,6 +1,7 @@
 version: '3'
 services:
   wordpress:
+    container_name: <project_name>_wordpress
     image: wordpress:5.3.1-apache
     restart: always
     ports:
@@ -13,6 +14,7 @@ services:
     networks:
       - back
   mysql: 
+    container_name: <project_name>_mysql
     image: mysql:5.7
     restart: always
     ports:
@@ -24,6 +26,7 @@ services:
     networks:
       - back
   phpmyadmin:
+    container_name: <project_name>_phpmyadmin
     depends_on:
       - mysql
     image: phpmyadmin/phpmyadmin
